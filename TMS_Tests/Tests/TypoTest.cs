@@ -2,6 +2,7 @@
 
 namespace TMS_Tests.Tests
 {
+    [TestFixture]
     internal class TypoTest : BaseTest
     {
         [Test]

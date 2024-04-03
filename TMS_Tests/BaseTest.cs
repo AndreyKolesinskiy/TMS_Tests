@@ -1,3 +1,4 @@
+using Docker.DotNet.Models;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -10,14 +11,11 @@ namespace TMS_Tests
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            Driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--incognito");
+            Driver = new ChromeDriver(options);
             Driver.Manage().Window.Maximize();
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-        }
-
-        [SetUp]
-        public void Setup()
-        {
         }
 
         [OneTimeTearDown]
