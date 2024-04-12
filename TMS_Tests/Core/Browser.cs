@@ -18,7 +18,7 @@ namespace TMS_Tests.Core
             {
                 "chrome" => new DriverFactory().GetChromeDriver(),
                 "firefox" => new DriverFactory().GetFireFoxDriver(),
-                _ => throw new NotSupportedException("This browser time wasn't found")
+                _ => throw new NotSupportedException("This browser type wasn't found")
             };
 
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Configurator.ReadConfiguration().TimeOut);
