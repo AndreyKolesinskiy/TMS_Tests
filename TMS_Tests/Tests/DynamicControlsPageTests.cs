@@ -21,8 +21,8 @@ namespace TMS_Tests.Tests
             Assert.That(checkbox.Displayed, Is.True);
 
             removeButton.Click();
-            var loadingElement = Driver.FindElement(By.XPath("//*[@id='loading']"));
-
+            var loadingElement = WaitsHelper.WaitForVisibility(By.XPath("//*[@id='loading']"));
+            
             Assert.That(loadingElement.Displayed, Is.True);
 
             var messageText = Driver.FindElement(By.XPath("//*[@id='message']"));

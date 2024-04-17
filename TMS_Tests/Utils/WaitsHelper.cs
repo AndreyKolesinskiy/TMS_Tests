@@ -27,6 +27,11 @@ namespace TMS_Tests.Utils
             return _wait.Until(ExpectedConditions.ElementIsVisible(locator));
         }
 
+        public IAlert WaitForAlertIsPresent()
+        {
+            return _wait.Until(ExpectedConditions.AlertIsPresent());
+        }
+
         public bool WaitForElementInvisible(By locator)
         {
             return _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(locator));

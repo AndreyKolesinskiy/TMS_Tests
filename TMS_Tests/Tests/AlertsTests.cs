@@ -47,9 +47,7 @@ namespace TMS_Tests.Tests
             var clickMeAlertbutton = Driver.FindElement(By.XPath("//*[@id='timerAlertButton']"));
             javaScriptExecutor.ExecuteScript("arguments[0].scrollIntoView(true);", clickMeAlertbutton);
             clickMeAlertbutton.Click();
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(Configurator.ReadConfiguration().TimeOut));
-            wait.Until(ExpectedConditions.AlertIsPresent());
-
+            WaitsHelper.WaitForAlertIsPresent();
             var alert = Driver.SwitchTo().Alert();
             Assert.That(alert.Text.Trim, Is.EqualTo("This alert appeared after 5 seconds"));
         }
