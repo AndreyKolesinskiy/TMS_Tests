@@ -1,4 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using Allure.Net.Commons;
+using Allure.NUnit;
+using Newtonsoft.Json.Bson;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using TMS_Tests.Core;
 using TMS_Tests.Pages;
@@ -7,8 +10,16 @@ using TMS_Tests.Utils;
 namespace TMS_Tests.Tests
 {
     //[Parallelizable(ParallelScope.Fixtures)]
+    [AllureNUnit]
+    [TestFixture]
     public class BaseTest
     {
+        [OneTimeSetUp]
+        public void GlobalSetup()
+        {
+            AllureLifecycle.Instance.CleanupResultDirectory();
+        }
+
         public IWebDriver Driver { get; set; }
         public LoginPage LoginPage { get; set; }
         public ProductsPage ProductsPage { get; set; }
