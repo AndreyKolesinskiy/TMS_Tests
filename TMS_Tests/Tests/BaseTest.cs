@@ -1,5 +1,6 @@
 ﻿using Allure.Net.Commons;
 using Allure.NUnit;
+using Allure.NUnit.Attributes;
 using Newtonsoft.Json.Bson;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
@@ -12,10 +13,12 @@ namespace TMS_Tests.Tests
     //[Parallelizable(ParallelScope.Fixtures)]
     [AllureNUnit]
     [TestFixture]
+    [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
     public class BaseTest
     {
         [OneTimeSetUp]
-        public void GlobalSetup()
+        [AllureBefore("Clean up allure-results directory")]
+        public static void GlobalSetup()
         {
             AllureLifecycle.Instance.CleanupResultDirectory();
         }
@@ -39,8 +42,15 @@ namespace TMS_Tests.Tests
         }
 
         [TearDown]
+        [AllureAfter("Driver quit")]
         public void TearDown()
         {
+            if (TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed)
+            {
+                var screenshot= ((ITakesScreenshot)Driver).GetScreenshot();
+                var screenshotByte = screenshot.AsByteArray;
+                AllureApi.AddAttachment("screenshot", "image/png", screenshotByte);
+            }
             Driver.Quit();
         }
     }
