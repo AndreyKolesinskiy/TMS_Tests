@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Allure.NUnit.Attributes;
+using OpenQA.Selenium;
 
 namespace TMS_Tests.Pages
 {
@@ -27,6 +28,7 @@ namespace TMS_Tests.Pages
         public IWebElement LoginButton() => Driver.FindElement(LoginButtonBy);
         public IWebElement ErrorTitle() => Driver.FindElement(ErrorTitleBy);
 
+        [AllureStep]
         public ProductsPage SuccessfulLogin(string userName, string password)
         {
             UserNameField().SendKeys(userName);
