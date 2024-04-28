@@ -11,7 +11,6 @@ namespace TMS_Tests.Pages
     public class TRLoginPage : BasePage
     {
         private string _endPoint = "";
-        public IWebDriver Driver { get; set; }
         public UiElement EmailField = new(Driver, By.Id("name"));
         //public UiElement PasswordField = new(driver, By.Id("password']"));
         //public UiElement LogInButton = new(driver, By.Id("button_primary']"));
