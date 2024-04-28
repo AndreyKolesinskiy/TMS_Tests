@@ -32,6 +32,9 @@ namespace TMS_Tests.Tests
         public WaitsHelper? WaitsHelper { get; set; }
         public Actions Actions { get; set; }
         public TRLoginPage TRLoginPage { get; set; }
+        public TRDashboardPage TRDashboardPage { get; set; }
+        public TRAddProjectPage TRAddProjectPage { get; set; }
+        public TRProjectsPage TRProjectsPage { get; set; }
 
         [SetUp]
         public void SetUp()
@@ -43,6 +46,9 @@ namespace TMS_Tests.Tests
             WaitsHelper = new WaitsHelper(Driver);
             Actions = new Actions(Driver);
             TRLoginPage = new TRLoginPage(Driver);
+            TRDashboardPage = new TRDashboardPage(Driver);
+            TRAddProjectPage = new TRAddProjectPage(Driver);
+            TRProjectsPage = new TRProjectsPage(Driver);
         }
 
         [TearDown]
