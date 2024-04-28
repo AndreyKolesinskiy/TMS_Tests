@@ -91,7 +91,9 @@ namespace TMS_Tests.Tests
             ProductsPage.OpenPageByUrl();
             ProductsPage.AddToCartButtons()[0].Click();
             YourCartPage.OpenPageByUrl();
+            logger.Error("Test has failed");
             Assert.That(false);
+            
         }
     }
 }

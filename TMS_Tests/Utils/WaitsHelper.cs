@@ -10,10 +10,10 @@ namespace TMS_Tests.Utils
         private WebDriverWait _wait;
         private TimeSpan _timeout;
 
-        public WaitsHelper(IWebDriver driver, TimeSpan timeout)
+        public WaitsHelper(IWebDriver driver)
         {
             this.driver = driver;
-            this._timeout = timeout;
+            _timeout = TimeSpan.FromSeconds(Configurator.ReadConfiguration().TimeOut);
             _wait = new WebDriverWait(driver, _timeout);
         }
 
@@ -52,7 +52,15 @@ namespace TMS_Tests.Utils
                 return true;
             }
         }
+        public IWebElement WaitForExist(By locator)
+        {
+            return _wait.Until(ExpectedConditions.ElementExists(locator));
+        }
 
+        public IReadOnlyCollection<IWebElement> WaitForElementsPresence(By locator)
+        {
+            return _wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(locator));
+        }
 
     }
 }

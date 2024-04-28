@@ -17,5 +17,10 @@ namespace TMS_Tests.Pages
         {
             Driver.Navigate().GoToUrl(Configurator.ReadConfiguration().BaseUrl + GetEndpoint());
         }
+
+        public void OpenTRPageByUrl()
+        {
+            Driver.Navigate().GoToUrl(Configurator.ReadConfiguration().BaseTRUrl + GetEndpoint());
+        }
     }
 }
