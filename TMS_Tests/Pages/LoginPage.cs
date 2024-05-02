@@ -43,5 +43,10 @@ namespace TMS_Tests.Pages
             PasswordField().SendKeys(password);
             LoginButton().Click();
         }
+
+        protected override bool EvaluateLoadedStatus()
+        {
+            return UserNameField().Displayed;
+        }
     }
 }

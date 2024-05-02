@@ -8,5 +8,7 @@
         public string BaseTRUrl { get; set; }
         public string UserNameSauceDemo {  get; set; }
         public string PasswordSauceDemo { get; set; }
+        public string TRLogin { get; set; }
+        public string TRPassword { get; set; }
     }
 }

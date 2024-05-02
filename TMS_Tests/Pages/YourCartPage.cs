@@ -24,5 +24,10 @@ namespace TMS_Tests.Pages
         public IWebElement ContinueShoppingButton() => Driver.FindElement(continueShoppingButtonBy);
         public IWebElement CheckoutButton() => Driver.FindElement(checkoutButtonBy);
         public IWebElement CartItem() => Driver.FindElement(cartItemBy);
+
+        protected override bool EvaluateLoadedStatus()
+        {
+            return CartItem().Displayed;
+        }
     }
 }
