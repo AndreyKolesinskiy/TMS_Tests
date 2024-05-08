@@ -16,6 +16,7 @@ namespace TMS_Tests.Core
             chromeOptions.AddArguments("--disable-gpu");
             chromeOptions.AddArguments("--disable-extensions");
             chromeOptions.AddArgument("--remote-debugging-pipe");
+            chromeOptions.AddArgument("--remote-debugging-port=9222");
             //chromeOptions.AddArgument("--disable-dev-shm-usage");
 
 
