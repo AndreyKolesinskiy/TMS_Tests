@@ -6,7 +6,6 @@ namespace TMS_Tests.Pages
 {
     public class TRProjectsPage : BasePage
     {
-
         private string _endPoint = "index.php?/admin/projects/overview";
 
         public Checkbox DeleteCheckbox() => new(Driver, By.XPath("//*[@role='dialog']//*[@name='deleteCheckbox']"));
