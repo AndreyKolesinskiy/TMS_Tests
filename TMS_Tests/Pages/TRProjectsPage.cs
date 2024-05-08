@@ -9,7 +9,7 @@ namespace TMS_Tests.Pages
 
         private string _endPoint = "index.php?/admin/projects/overview";
 
-        public UiElement DeleteCheckbox() => new(Driver, By.XPath("//*[@role='dialog']//*[@name='deleteCheckbox']"));
+        public Checkbox DeleteCheckbox() => new(Driver, By.XPath("//*[@role='dialog']//*[@name='deleteCheckbox']"));
         public UiElement DeleteDialogOKButtton() => new(Driver, By.XPath("//*[@role='dialog']//*[@data-testid='caseFieldsTabDeleteDialogButtonOk']"));
         public UiElement ProjectsPageTitle() => new(Driver, By.XPath("//*[@data-testid='testCaseContentHeaderTitle']"));
         public UiElement GetNewCreatedProjectElement(string projectName)
@@ -28,7 +28,6 @@ namespace TMS_Tests.Pages
 
         public TRProjectsPage(IWebDriver driver) : base(driver)
         {
-            Driver = driver;
         }
 
         public override string GetEndpoint()

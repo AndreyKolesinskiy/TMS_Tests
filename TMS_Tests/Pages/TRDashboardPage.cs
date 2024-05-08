@@ -10,7 +10,6 @@ namespace TMS_Tests.Pages
 
         public TRDashboardPage(IWebDriver driver) : base(driver)
         {
-            Driver = driver;
         }
 
         public override string GetEndpoint()
