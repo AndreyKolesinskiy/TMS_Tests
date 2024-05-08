@@ -12,10 +12,12 @@ namespace TMS_Tests.Core
         {
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--incognito");
-            //chromeOptions.AddArguments("--headless");
+            chromeOptions.AddArguments("--headless");
             chromeOptions.AddArguments("--disable-gpu");
             chromeOptions.AddArguments("--disable-extensions");
             chromeOptions.AddArgument("--remote-debugging-pipe");;
+            chromeOptions.AddArgument("--no-sandbox");;
+            chromeOptions.AddArgument("disable-dev-shm-usag");;
 
 
             new DriverManager().SetUpDriver(new ChromeConfig());
