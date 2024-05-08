@@ -12,10 +12,10 @@ namespace TMS_Tests.Core
         {
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--incognito");
-            chromeOptions.AddArgument("--headless");
-            chromeOptions.AddArgument("--disable-gpu");
-            chromeOptions.AddArgument("--disable-extentions");
-            chromeOptions.AddArgument("--remote-debugging-pipe");
+            chromeOptions.AddArguments("--headless");
+            chromeOptions.AddArguments("--disable-gpu");
+            chromeOptions.AddArguments("--disable-extensions");
+            //chromeOptions.AddArgument("--remote-debugging-pipe");
 
 
             new DriverManager().SetUpDriver(new ChromeConfig());
