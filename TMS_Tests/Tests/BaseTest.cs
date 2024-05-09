@@ -11,8 +11,9 @@ using TMS_Tests.Utils;
 
 namespace TMS_Tests.Tests
 {
-    [Parallelizable(ParallelScope.All)]
+    //[Parallelizable(ParallelScope.Fixtures)]
     [AllureNUnit]
+    [TestFixture]
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
     public class BaseTest
     {
