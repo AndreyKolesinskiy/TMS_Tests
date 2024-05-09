@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu May 09 06:34:26 GMT 2024","Thu May 09 06:34:26 GMT 2024","749","","","","YourCartPageTests","AfterCLickingContinueShoppingUserIsNavigatedToProductsPage","After clicking Continue Shopping button user is navigated to Products page","Test description"
+"failed","Thu May 09 06:34:28 GMT 2024","Thu May 09 06:34:29 GMT 2024","895","","","","YourCartPageTests","FailingTest","Check that test fails and screenshot is added","Test description"
+"passed","Thu May 09 06:34:27 GMT 2024","Thu May 09 06:34:28 GMT 2024","707","Cart suite","Shopping cart suite","Shopping cart buttons suite","YourCartPageTests","ContinueShoppingButtonIsDisplayed","Check continue shopping button","Test description"
+"passed","Thu May 09 06:34:29 GMT 2024","Thu May 09 06:34:30 GMT 2024","962","","","","YourCartPageTests","ItemIsDisplayedInCart","Check that added item is displayed in cart","Test description"
+"passed","Thu May 09 06:34:26 GMT 2024","Thu May 09 06:34:27 GMT 2024","716","Cart suite","Shopping cart suite","Checkout button suite","YourCartPageTests","CheckoutButtonIsDisplayed","Check that CHckout button is displayed","Test description"
