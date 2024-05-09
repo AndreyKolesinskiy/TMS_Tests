@@ -20,6 +20,7 @@ namespace TMS_Tests.Tests
                 .Perform();
             var alert = Driver.SwitchTo().Alert();
             Assert.That(alert.Text.Trim, Is.EqualTo("You selected a context menu"));
+            alert.Accept();
         }
     }
 }
