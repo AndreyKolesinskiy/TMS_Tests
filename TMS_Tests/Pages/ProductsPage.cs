@@ -26,5 +26,10 @@ namespace TMS_Tests.Pages
         public ReadOnlyCollection<IWebElement> AddToCartButtons() => Driver.FindElements(addToCartButtons);
         public IWebElement RemoveButton() => Driver.FindElement(RemoveButtonBy);
         public ReadOnlyCollection<IWebElement> RemoveButtons() => Driver.FindElements(RemoveButtonBy);
+
+        protected override bool EvaluateLoadedStatus()
+        {
+            return ProductsTitle().Displayed;
+        }
     }
 }
