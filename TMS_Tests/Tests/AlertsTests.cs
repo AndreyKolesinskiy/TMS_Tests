@@ -50,6 +50,7 @@ namespace TMS_Tests.Tests
             WaitsHelper.WaitForAlertIsPresent();
             var alert = Driver.SwitchTo().Alert();
             Assert.That(alert.Text.Trim, Is.EqualTo("This alert appeared after 5 seconds"));
+            alert.Accept();
         }
 
         [Test]

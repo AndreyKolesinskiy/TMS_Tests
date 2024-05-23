@@ -75,7 +75,9 @@ namespace TMS_Tests.Tests
             {
                 Console.WriteLine("Couldnt load file");
             }
+            Driver.Close();
             Driver.Quit();
+            
         }
     }
 }
