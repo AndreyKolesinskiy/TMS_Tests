@@ -15,21 +15,21 @@ namespace TMS_Tests.Tests
         }
 
         [Test]
+        [Category("TestRail_tests")]
         public void CreateTestProject()
         {
             TRDashboardPage.AddProjectButton().Click();
 
             var project = new ProjectModel()
             {
-                Name = "AKaliasinskiTestProject ",
+                Name = "AKaliasinskiTestProject " + DateTime.Now,
                 Announcement = "Test announcement",
                 IsShowAnnouncement = true,
                 ProjectType = "Use a single repository for all cases (recommended)",
                 IsEnableTestCaseApprovals = true
             };
 
-            projectName = project.Name + DateTime.Now;
-            TRAddProjectPage.NameField().SendKeys(projectName);
+            TRAddProjectPage.NameField().SendKeys(project.Name);
             TRAddProjectPage.AnnouncmentField().SendKeys(project.Announcement);
             TRAddProjectPage.SelectShowAnnouncementIfTrue(project.IsShowAnnouncement);
             TRAddProjectPage.SelectPojectType(project.ProjectType);
@@ -39,6 +39,7 @@ namespace TMS_Tests.Tests
         }
 
         [Test]
+        [Category("TestRail_tests")]
         public void DeleteTestProject()
         {
             CreateTestProject();
