@@ -24,7 +24,10 @@
         [Test]
         public void DeleteTestProject()
         {
-            CreateTestProject();
+            TRDashboardPage.AddProjectButton().Click();
+            projectName = "AKaliasinskiTestProject " + DateTime.Now;
+            TRAddProjectPage.NameField().SendKeys(projectName);
+            TRAddProjectPage.AddProjectSubmitButton().Click();
             TRProjectsPage.GetDeleteButtonForProject(projectName).Click();
             TRProjectsPage.DeleteCheckbox().Click();
             TRProjectsPage.DeleteDialogOKButtton().Click();

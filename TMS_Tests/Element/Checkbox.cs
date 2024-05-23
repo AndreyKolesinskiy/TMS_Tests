@@ -1,8 +1,7 @@
 ﻿using OpenQA.Selenium;
-using TMS_Tests.Element;
 using TMS_Tests.Utils;
 
-namespace TMS_Tests.Core
+namespace TMS_Tests.Element
 {
     public class Checkbox
     {
@@ -58,7 +57,7 @@ namespace TMS_Tests.Core
 
         public void SelectAll()
         {
-            foreach( var element in _uiElements)
+            foreach (var element in _uiElements)
                 if (!element.Selected)
                     element.Click();
         }

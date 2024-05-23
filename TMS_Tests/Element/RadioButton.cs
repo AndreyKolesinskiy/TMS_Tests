@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TMS_Tests.Element;
 using TMS_Tests.Utils;
 
-namespace TMS_Tests.Core
+namespace TMS_Tests.Element
 {
     public class RadioButton
     {
