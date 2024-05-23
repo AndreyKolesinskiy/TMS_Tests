@@ -14,7 +14,7 @@ namespace TMS_Tests.Tests
     //[Parallelizable(ParallelScope.Fixtures)]
     [AllureNUnit]
     [TestFixture]
-    [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+    //[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
     public class BaseTest
     {
         [OneTimeSetUp]
