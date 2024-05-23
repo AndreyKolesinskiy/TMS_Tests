@@ -29,7 +29,8 @@ namespace TMS_Tests.Tests
                 IsEnableTestCaseApprovals = true
             };
 
-            TRAddProjectPage.NameField().SendKeys(project.Name);
+            projectName = project.Name;
+            TRAddProjectPage.NameField().SendKeys(projectName);
             TRAddProjectPage.AnnouncmentField().SendKeys(project.Announcement);
             TRAddProjectPage.SelectShowAnnouncementIfTrue(project.IsShowAnnouncement);
             TRAddProjectPage.SelectPojectType(project.ProjectType);
