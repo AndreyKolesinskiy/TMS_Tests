@@ -9,6 +9,7 @@ on:
      options:
      - TestRail_tests
      - Other_tests
+     - All_tests
    required: true
 
 jobs:
@@ -34,7 +35,16 @@ jobs:
         dotnet-version: 8.0.x
 
     # Execute all unit tests in the solution
-    - name: Execute seleniun tests
+    - name: Execute TestRail tests
+      if: github.event.inputs.test_category == 'TestRail_tests'
+      run: dotnet test --filter Category=TestRail_tests
+
+    - name: Execute Other tests
+      if: github.event.inputs.test_category == 'Other_tests'
+      run: dotnet test --filter Category=Other_tests
+
+    - name: Execute All tests
+      if: github.event.inputs.test_category == 'All_tests'
       run: dotnet test
 
     - name: Load test report history
