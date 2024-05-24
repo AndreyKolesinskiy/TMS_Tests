@@ -43,7 +43,10 @@ namespace TMS_Tests.Tests
         [Category("TestRail_tests")]
         public void DeleteTestProject()
         {
-            CreateTestProject();
+            TRDashboardPage.AddProjectButton().Click();
+            projectName = "AKaliasinskiTestProject " + DateTime.Now;
+            TRAddProjectPage.NameField().SendKeys(projectName);
+            TRAddProjectPage.AddProjectSubmitButton().Click();
             TRProjectsPage.GetDeleteButtonForProject(projectName).Click();
             TRProjectsPage.DeleteCheckbox().EnableCheckbox();
             TRProjectsPage.DeleteDialogOKButtton().Click();

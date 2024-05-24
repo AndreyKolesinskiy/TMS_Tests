@@ -1,4 +1,4 @@
-﻿using AngleSharp.Dom;
+using AngleSharp.Dom;
 using OpenQA.Selenium;
 using TMS_Tests.Utils;
 

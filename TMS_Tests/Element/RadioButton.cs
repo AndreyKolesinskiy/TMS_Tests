@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium;
+using OpenQA.Selenium;
 using TMS_Tests.Utils;
 
 namespace TMS_Tests.Element
