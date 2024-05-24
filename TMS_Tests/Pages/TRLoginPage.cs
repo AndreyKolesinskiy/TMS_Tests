@@ -13,7 +13,6 @@ namespace TMS_Tests.Pages
         
         public TRLoginPage(IWebDriver driver) : base(driver)
         {
-            Driver = driver;
         }
 
         public override string GetEndpoint()

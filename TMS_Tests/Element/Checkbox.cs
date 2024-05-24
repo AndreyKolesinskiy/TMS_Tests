@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+using AngleSharp.Dom;
+using OpenQA.Selenium;
 using TMS_Tests.Utils;
 
 namespace TMS_Tests.Element
@@ -12,6 +13,8 @@ namespace TMS_Tests.Element
         public Checkbox(IWebDriver driver, By locator)
         {
             _waitsHelper = new WaitsHelper(driver);
+            _uiElements = new List<UiElement>();
+            _texts = new List<string>();
 
             foreach (var element in _waitsHelper.WaitForElementsPresence(locator))
             {
@@ -69,6 +72,16 @@ namespace TMS_Tests.Element
                     element.Click();
         }
 
+        public void EnableCheckbox()
+        {
+            if (!_uiElements[0].Selected)
+                _uiElements[0].Click();
+        }
 
+        public void DisableCheckbox()
+        {
+            if (_uiElements[0].Selected)
+                _uiElements[0].Click();
+        }
     }
 }

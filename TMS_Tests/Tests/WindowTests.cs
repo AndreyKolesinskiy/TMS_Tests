@@ -11,6 +11,7 @@ namespace TMS_Tests.Tests
         }
 
         [Test]
+        [Category("Other_tests")]
         public void OpenNewWindow()
         {
             var initialWindowHandle = Driver.CurrentWindowHandle;
@@ -29,6 +30,7 @@ namespace TMS_Tests.Tests
         }
 
         [Test]
+        [Category("Other_tests")]
         public void OpenNewWindowAndCLoseIt()
         {
             var initialWindowHandle = Driver.CurrentWindowHandle;

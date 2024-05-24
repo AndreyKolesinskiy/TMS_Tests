@@ -17,12 +17,12 @@ namespace TMS_Tests.Tests
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
     public class BaseTest
     {
-        [OneTimeSetUp]
-        [AllureBefore("Clean up allure-results directory")]
-        public static void GlobalSetup()
-        {
-            AllureLifecycle.Instance.CleanupResultDirectory();
-        }
+        //[OneTimeSetUp]
+        //[AllureBefore("Clean up allure-results directory")]
+        //public static void GlobalSetup()
+        //{
+        //    AllureLifecycle.Instance.CleanupResultDirectory();
+        //}
 
         protected Logger logger = LogManager.GetCurrentClassLogger();
         public IWebDriver Driver { get; set; }
@@ -75,7 +75,9 @@ namespace TMS_Tests.Tests
             {
                 Console.WriteLine("Couldnt load file");
             }
+            Driver.Close();
             Driver.Quit();
+            
         }
     }
 }
