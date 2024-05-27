@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon May 27 13:19:50 GMT 2024","Mon May 27 13:19:51 GMT 2024","687","","","","WindowTests","OpenNewWindowAndCLoseIt","OpenNewWindowAndCLoseIt",""
+"passed","Mon May 27 13:19:47 GMT 2024","Mon May 27 13:19:50 GMT 2024","2475","","","","WindowTests","OpenNewWindow","OpenNewWindow",""
